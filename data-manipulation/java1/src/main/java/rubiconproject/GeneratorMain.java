@@ -16,7 +16,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.MappingJsonFactory;
 
 /**
- * Assumptions made: 
+ * Assumptions made:
+ * [first argument - path to directory, second argument - name of output file]
  * [true = 1, false = 0]
  * [score is within Integer range]
  * [input files can be big, so i used streaming API of Jackson library, fastest one]
