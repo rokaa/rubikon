@@ -29,15 +29,14 @@ public class SiteReaderWriter {
 	 */
 	public void doIOFromFile(File fl, JsonGenerator generator, JsonFactory jFac)
 			throws JsonGenerationException, IOException {
-		SiteReaderWriter srw = new SiteReaderWriter();
 		generator.writeStartObject();
 		generator.writeStringField("collectionId", fl.getName());
 		generator.writeFieldName("sites");
 		generator.writeStartArray();
 		if (fl.getName().equals("input2.json")) {
-			srw.doIOSiteFromJson(fl, generator, jFac);
+			doIOSiteFromJson(fl, generator, jFac);
 		} else {
-			srw.doIOSiteFromCsv(fl, generator);
+			doIOSiteFromCsv(fl, generator);
 		}
 		generator.writeEndArray();
 		generator.writeEndObject();
