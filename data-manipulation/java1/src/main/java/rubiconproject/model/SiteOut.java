@@ -2,8 +2,12 @@ package rubiconproject.model;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import rubiconproject.KeywordServiceImpl;
+
 @JsonPropertyOrder({ "id", "name", "mobile", "keywords", "score" })
 public class SiteOut extends Site{
+	
+	private KeywordServiceImpl keyGen = new KeywordServiceImpl();
 	
 	private String id;
 	private String keywords;
@@ -26,6 +30,15 @@ public class SiteOut extends Site{
 		this.setName(s.getName());
 		this.setMobile(s.getMobile());
 		this.setScore(s.getScore());
+	}
+	
+	/**
+	 * Generate keywords
+	 * @param o
+	 * @return
+	 */
+	public String genKeywords(Object o){
+		return keyGen.resolveKeywords(o);
 	}
 	
 	/**

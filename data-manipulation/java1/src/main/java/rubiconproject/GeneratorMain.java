@@ -18,6 +18,6 @@ public class GeneratorMain {
 
 	public static void main(String[] args) {
 		JsonIO js = new JsonIO();
-		js.generateJsonFile(args[0], args[1]);	
+		js.generateJsonSiteFile(args[0], args[1]);	
 	}
 }
